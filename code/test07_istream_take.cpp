@@ -9,7 +9,7 @@ int main()
     using std::cout;
     using std::ifstream;
     using nvwa::istream_line_reader;
-    using ranges::view::take;
+    using ranges::views::take;
 
     cout << "This program outputs the first 10 lines of itself.\n";
     cout << "--------------------------------------------------\n";

@@ -22,7 +22,7 @@ int main()
     }
 
     {
-        auto rng = view::iota(1, 101);
+        auto rng = views::iota(1, 101);
         std::vector<int> result;
         std::transform(rng.begin(), rng.end(), std::back_inserter(result),
                        square);
@@ -33,14 +33,14 @@ int main()
     {
         int sum = nvwa::reduce(
             std::plus<int>(),
-            nvwa::fmap(square, view::iota(1, 101)));
+            nvwa::fmap(square, views::iota(1, 101)));
         std::cout << sum << std::endl;
     }
 
     {
         int sum = nvwa::reduce(
             std::plus<int>(),
-            view::iota(1, 101) | view::transform(square));
+            views::iota(1, 101) | views::transform(square));
         std::cout << sum << std::endl;
     }
 }

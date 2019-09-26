@@ -46,9 +46,9 @@ int main(int argc, char* argv[])
         return nvwa::istream_line_reader(tmp);
     };
 #endif
-    for (auto&& line : view::counted(argv + 1, argc - 1) |
-                       view::transform(make_line_reader) |
-                       view::join) {
+    for (auto&& line : views::counted(argv + 1, argc - 1) |
+                       views::transform(make_line_reader) |
+                       views::join) {
         std::cout << line << std::endl;
     }
 }

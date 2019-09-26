@@ -99,7 +99,7 @@ bool operator!=(const prime_generator::iterator& lhs,
 
 int main()
 {
-    ranges::copy(prime_generator() | ranges::view::take(20),
+    ranges::copy(prime_generator() | ranges::views::take(20),
                  ranges::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
 }

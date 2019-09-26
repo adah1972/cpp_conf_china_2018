@@ -5,20 +5,20 @@
 #include <stdlib.h>
 
 namespace ranges = std::experimental::ranges;
-using ranges::Iterator;
+using ranges::input_iterator;
 
 struct null_sentinel {};
 
-template <Iterator I>
+template <input_iterator I>
 bool operator==(I i, null_sentinel) { return *i == 0; }
 
-template <Iterator I>
+template <input_iterator I>
 bool operator==(null_sentinel, I i) { return *i == 0; }
 
-template <Iterator I>
+template <input_iterator I>
 bool operator!=(I i, null_sentinel) { return *i != 0; }
 
-template <Iterator I>
+template <input_iterator I>
 bool operator!=(null_sentinel, I i) { return *i != 0; }
 
 int main(int argc, char* argv[])
